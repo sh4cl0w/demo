@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>mang xa hoi</title>
+    <style>
+        nav
+            {
+                display: flex;
+                background-color:blue;
+                justify-content: center;
+            }
+        ul{
+            list-style-type: none;
+            display: flex;
+        }    
+        li{
+            padding: 15px 20px;
+            margin-left: 5px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        li:hover{
+            background-color: red;
+        }
+        div{
+            padding: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+     <ul >
+        
+        <a href ="https://www.youtube.com"> <li>youtube</li></a>
+        <a href ="https://www.google.com" ><li>google</li></a>
+        <a href ="https://www.facebook.com"><li>facebook</li></a>
+
+     </ul>   
+    </nav>
+    <div>
+        <form id="myForm" method="posta">
+            <label for="inputData">Enter Name :</label>
+            <input type ="text" id = "inputData"Name ="inputData">
+            <input type="submit" value="submit" onclick="showData()">
+
+        </form>
+
+
+
+    </div>
+    <script>
+        function showData()
+        {
+            var element =document.getElementById("inputData");
+            var data =element.value;
+            alert("Name input = "+data);
+        }
+
+
+    </script>
+
+</body>
