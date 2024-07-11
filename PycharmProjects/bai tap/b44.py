@@ -1,27 +1,35 @@
-def power(a, b, c):
-    result = 1
-    a = a % c
+import math
 
-    while b > 0:
+arrA=input("enter array:").split()
+arrA=[int(i) for i in arrA]
+p=int(input("enter p:"))
+def euclid(a,b):
+    tmp=b
+    if b==0:
+        x=1
+        y=0
+    x2=1
+    x1=0
+    y2=0
+    y1=1
+    while b>0:
+        q=int(a/b)
+        r=a-(q*b)
+        x=x2-(q*x1)
+        y=y2-(q*y1)
+        a=b
+        b=r
+        x2=x1
+        x1=x
+        y2=y1
+        y1=y
+    x=x2
+    if x<0:
+        x=x+tmp
+    return x
 
-        if b % 2 == 1:
-            result = (result * a) % c
-        b = b >> 1
-        a = (a * a) % c
-
-    return result
-def mod_inverse(a, p):
-
-    return power(a, p-2, p)
-
-def main():
-    p = int(input("Nhập giá trị p (số nguyên tố): "))
-    A = list(map(int, input("Nhập các phần tử của mảng A (cách nhau bởi dấu cách): ").split()))
-
-    B = [mod_inverse(a, p) for a in A]
-
-    print("Mảng B có các phần tử là nghịch đảo của các phần tử tương ứng trong A:")
-    print(B)
-
-if __name__ == "__main__":
-    main()
+arrB=list()
+for i in arrA:
+    arrB.append(euclid(i,p))
+print(arrA)
+print(arrB)
